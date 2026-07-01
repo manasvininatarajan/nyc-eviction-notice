@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>I Just Got an Eviction Notice — What Do I Do? | NYC Tenant Guide</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --red:    #A32D2D;
+    --red-l:  #FCEBEB;
+    --amber:  #854F0B;
+    --amb-l:  #FAEEDA;
+    --green:  #3B6D11;
+    --grn-l:  #EAF3DE;
+    --blue:   #185FA5;
+    --blu-l:  #E6F1FB;
+    --gray:   #444441;
+    --gray-l: #F1EFE8;
+    --border: #D3D1C7;
+    --text:   #2C2C2A;
+    --sub:    #5F5E5A;
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Georgia, sans-serif;
+    background: #F5F4F0;
+    color: var(--text);
+    line-height: 1.7;
+    padding: 0;
+  }
+
+  .hero {
+    background: var(--red);
+    color: #fff;
+    padding: 36px 24px 32px;
+    text-align: center;
+  }
+  .hero .eyebrow {
+    font-size: 12px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    opacity: .75;
+    margin-bottom: 10px;
+  }
+  .hero h1 {
+    font-size: clamp(22px, 5vw, 32px);
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 12px;
+  }
+  .hero p {
+    font-size: 15px;
+    opacity: .88;
+    max-width: 520px;
+    margin: 0 auto 20px;
+  }
+  .hero .calm {
+    display: inline-block;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 8px;
+    padding: 10px 18px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  .container {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 16px 60px;
+  }
+
+  /* CALL NOW banner */
+  .call-banner {
+    background: var(--red-l);
+    border: 1.5px solid var(--red);
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin: 24px 0;
+    text-align: center;
+  }
+  .call-banner .label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 6px;
+  }
+  .call-banner h2 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--red);
+    margin-bottom: 4px;
+  }
+  .call-banner p {
+    font-size: 13px;
+    color: #7A2020;
+    margin-bottom: 14px;
+  }
+  .call-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  .call-btn {
+    display: block;
+    background: var(--red);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 13px;
+    font-weight: 500;
+    text-align: center;
+    line-height: 1.4;
+  }
+  .call-btn span { display: block; font-size: 11px; opacity: .8; font-weight: 400; }
+  .call-btn.secondary {
+    background: #fff;
+    color: var(--red);
+    border: 1px solid var(--red);
+  }
+
+  /* Section headers */
+  .step-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 28px 0 14px;
+  }
+  .step-num {
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    background: var(--text);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .step-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text);
+  }
+
+  /* Info cards */
+  .card {
+    background: #fff;
+    border: 0.5px solid var(--border);
+    border-radius: 12px;
+    padding: 16px 18px;
+    margin-bottom: 10px;
+  }
+  .card-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 6px;
+  }
+  .card p, .card li {
+    font-size: 14px;
+    color: var(--sub);
+    line-height: 1.65;
+  }
+  .card ul { padding-left: 18px; }
+  .card ul li { margin-bottom: 4px; }
+
+  /* Alert cards */
+  .alert {
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 1.65;
+  }
+  .alert-red    { background: var(--red-l);  border-left: 3px solid var(--red);   color: #7A2020; }
+  .alert-green  { background: var(--grn-l);  border-left: 3px solid var(--green); color: #2A4F0C; }
+  .alert-amber  { background: var(--amb-l);  border-left: 3px solid var(--amber); color: #5C3606; }
+  .alert-blue   { background: var(--blu-l);  border-left: 3px solid var(--blue);  color: #0C3A6B; }
+  .alert strong { font-weight: 600; }
+
+  /* Resource rows */
+  .resource {
+    background: #fff;
+    border: 0.5px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+  .resource-icon {
+    width: 36px; height: 36px;
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .resource-icon.red   { background: var(--red-l); }
+  .resource-icon.blue  { background: var(--blu-l); }
+  .resource-icon.green { background: var(--grn-l); }
+  .resource-icon.amber { background: var(--amb-l); }
+  .resource-body { flex: 1; min-width: 0; }
+  .resource-name { font-size: 14px; font-weight: 600; color: var(--text); }
+  .resource-desc { font-size: 13px; color: var(--sub); margin: 2px 0 6px; line-height: 1.5; }
+  .resource-contact { display: flex; flex-wrap: wrap; gap: 6px; }
+  .phone-btn {
+    display: inline-block;
+    background: var(--gray-l);
+    color: var(--text);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 5px 12px;
+    border-radius: 6px;
+    border: 0.5px solid var(--border);
+  }
+  .phone-btn:hover { background: var(--border); }
+
+  /* Borough grid */
+  .borough-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 8px;
+    margin-top: 10px;
+  }
+  .borough-card {
+    background: #fff;
+    border: 0.5px solid var(--border);
+    border-radius: 10px;
+    padding: 12px 14px;
+    text-align: center;
+  }
+  .borough-name { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+  .borough-num  { font-size: 12px; color: var(--blue); }
+  .borough-num a { color: var(--blue); text-decoration: none; }
+
+  /* Checklist */
+  .checklist { list-style: none; padding: 0; }
+  .checklist li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 8px 0;
+    border-bottom: 0.5px solid var(--border);
+    font-size: 14px;
+    color: var(--sub);
+    cursor: pointer;
+    user-select: none;
+  }
+  .checklist li:last-child { border-bottom: none; }
+  .check-box {
+    width: 18px; height: 18px;
+    border-radius: 4px;
+    border: 1.5px solid var(--border);
+    flex-shrink: 0;
+    margin-top: 2px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px;
+    transition: all .15s;
+  }
+  .checklist li.done .check-box {
+    background: var(--green); border-color: var(--green); color: #fff;
+  }
+  .checklist li.done span { text-decoration: line-through; opacity: .6; }
+
+  /* FAQ */
+  .faq-item {
+    background: #fff;
+    border: 0.5px solid var(--border);
+    border-radius: 10px;
+    margin-bottom: 8px;
+    overflow: hidden;
+  }
+  .faq-q {
+    padding: 14px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+  }
+  .faq-q .arrow { font-size: 12px; color: var(--sub); transition: transform .2s; flex-shrink: 0; }
+  .faq-item.open .faq-q .arrow { transform: rotate(180deg); }
+  .faq-a {
+    display: none;
+    padding: 0 16px 14px;
+    font-size: 14px;
+    color: var(--sub);
+    line-height: 1.65;
+    border-top: 0.5px solid var(--border);
+    padding-top: 12px;
+  }
+  .faq-item.open .faq-a { display: block; }
+
+  /* Divider */
+  .divider { border: none; border-top: 1px solid var(--border); margin: 28px 0; }
+
+  /* Languages */
+  .lang-strip {
+    background: var(--blu-l);
+    border: 0.5px solid #B5D4F4;
+    border-radius: 10px;
+    padding: 12px 16px;
+    font-size: 13px;
+    color: var(--blue);
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  .lang-strip strong { font-weight: 600; }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    font-size: 12px;
+    color: var(--sub);
+    padding: 24px 16px;
+    border-top: 0.5px solid var(--border);
+    line-height: 1.8;
+  }
+
+  /* Print */
+  @media print {
+    body { background: #fff; }
+    .call-btn, .phone-btn { border: 1px solid #ccc !important; }
+    .hero { background: #A32D2D !important; -webkit-print-color-adjust: exact; }
+  }
+
+  @media (max-width: 420px) {
+    .call-grid { grid-template-columns: 1fr; }
+    .borough-grid { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="eyebrow">NYC Tenant Crisis Guide</div>
+  <h1>I Just Got an Eviction Notice.<br>What Do I Do?</h1>
+  <p>You have rights. You have time. You do not have to leave just because you got a piece of paper.</p>
+  <div class="calm">⚠️ Do not ignore the notice — but do not panic either. Read this first.</div>
+</div>
+
+<div class="container">
+
+  <!-- LANGUAGE NOTE -->
+  <div class="lang-strip" style="margin-top:20px">
+    <strong>Available in multiple languages.</strong> Call 311 and ask for a translator. Legal Aid provides services in Spanish, Chinese, Haitian Creole, Bengali, Arabic, and more — regardless of immigration status.
+  </div>
+
+  <!-- CALL NOW -->
+  <div class="call-banner">
+    <div class="label">🚨 Do this first</div>
+    <h2>Get a free lawyer — right now</h2>
+    <p>NYC law gives most tenants a <strong>free attorney</strong> in Housing Court. You do not need to pay anything. Call your borough's Legal Aid office today.</p>
+    <div class="call-grid">
+      <a class="call-btn" href="tel:3-1-1">📞 Call 311<span>Ask for "Tenant Helpline"</span></a>
+      <a class="call-btn secondary" href="tel:718-557-1379">📞 Housing Court Answers<span>718-557-1379 • Mon–Fri 9–5</span></a>
+    </div>
+  </div>
+
+  <!-- MOST IMPORTANT THING -->
+  <div class="alert alert-red">
+    <strong>The most important thing you need to know:</strong> A notice is NOT an eviction. Your landlord cannot remove you, change your locks, or shut off your utilities without a court order. Only a city marshal can carry out an eviction — and only after a judge rules against you in Housing Court. You have time to act.
+  </div>
+
+  <!-- STEP 1 -->
+  <div class="step-header">
+    <div class="step-num">1</div>
+    <div class="step-title">Figure out what kind of notice you received</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">📄 Non-Payment Notice ("14-Day Rent Demand")</div>
+    <p>Your landlord says you owe rent. You have 14 days to pay or reach an agreement before they can file in court. <strong>This is the most common notice</strong> and the most solvable — see Step 3 for emergency rental assistance.</p>
+  </div>
+
+  <div class="card">
+    <div class="card-title">📄 Notice of Petition (court papers)</div>
+    <p>Your landlord has already filed in Housing Court. You will have a court date printed on the papers. <strong>You must show up to that date</strong> — if you don't, the judge can rule against you automatically. Call Legal Aid today.</p>
+  </div>
+
+  <div class="card">
+    <div class="card-title">📄 Holdover Notice</div>
+    <p>Your landlord says you have no right to be in the apartment — maybe your lease ended, or they claim another reason. This is more complex. Get a lawyer immediately.</p>
+  </div>
+
+  <div class="alert alert-amber">
+    <strong>Not sure which one you have?</strong> Call Housing Court Answers at <a href="tel:718-557-1379" style="color:inherit;font-weight:600">718-557-1379</a> or <a href="tel:212-962-4795" style="color:inherit;font-weight:600">212-962-4795</a> Monday–Friday 9am–5pm. They will help you understand your papers for free.
+  </div>
+
+  <!-- STEP 2 -->
+  <div class="step-header">
+    <div class="step-num">2</div>
+    <div class="step-title">Get a free lawyer — by borough</div>
+  </div>
+
+  <div class="alert alert-green">
+    <strong>NYC's Right to Counsel law</strong> means most low-income tenants get a free attorney in Housing Court. You do not need to find one yourself — show up to your first court date and say "I would like an attorney." Someone will be assigned to you.
+  </div>
+
+  <div class="card">
+    <div class="card-title">Legal Aid Society — free legal help by borough</div>
+    <div class="borough-grid">
+      <div class="borough-card">
+        <div class="borough-name">Manhattan</div>
+        <div class="borough-num"><a href="tel:212-426-3000">212-426-3000</a></div>
+      </div>
+      <div class="borough-card">
+        <div class="borough-name">Brooklyn</div>
+        <div class="borough-num"><a href="tel:718-722-3100">718-722-3100</a></div>
+      </div>
+      <div class="borough-card">
+        <div class="borough-name">Bronx</div>
+        <div class="borough-num"><a href="tel:718-991-4600">718-991-4600</a></div>
+      </div>
+      <div class="borough-card">
+        <div class="borough-name">Queens</div>
+        <div class="borough-num"><a href="tel:718-286-2450">718-286-2450</a></div>
+      </div>
+      <div class="borough-card">
+        <div class="borough-name">Staten Island</div>
+        <div class="borough-num"><a href="tel:347-422-5333">347-422-5333</a></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="resource">
+    <div class="resource-icon blue">⚖️</div>
+    <div class="resource-body">
+      <div class="resource-name">Legal Services NYC</div>
+      <div class="resource-desc">Free eviction defense, harassment cases, NYCHA support. Serves all 5 boroughs regardless of immigration status.</div>
+      <div class="resource-contact">
+        <a class="phone-btn" href="https://www.legalservicesnyc.org" target="_blank">legalservicesnyc.org</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="resource">
+    <div class="resource-icon blue">🏛️</div>
+    <div class="resource-body">
+      <div class="resource-name">NY Legal Assistance Group (NYLAG)</div>
+      <div class="resource-desc">Free legal help for tenants facing eviction or displacement, including NYCHA and Section 8 residents.</div>
+      <div class="resource-contact">
+        <a class="phone-btn" href="https://nylag.org" target="_blank">nylag.org</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 3 -->
+  <div class="step-header">
+    <div class="step-num">3</div>
+    <div class="step-title">Apply for emergency rental assistance</div>
+  </div>
+
+  <div class="alert alert-blue">
+    <strong>If you owe back rent</strong>, applying for emergency assistance can sometimes legally slow down or pause the eviction process while your application is reviewed. Apply as soon as possible even if you're unsure you qualify.
+  </div>
+
+  <div class="resource">
+    <div class="resource-icon amber">💰</div>
+    <div class="resource-body">
+      <div class="resource-name">HRA One Shot Deal</div>
+      <div class="resource-desc">NYC's emergency one-time payment for tenants behind on rent due to a sudden crisis (job loss, illness, etc.). You must show you can pay rent going forward.</div>
+      <div class="resource-contact">
+        <a class="phone-btn" href="tel:3-1-1">📞 Call 311</a>
+        <a class="phone-btn" href="tel:718-557-1379">Housing Court: 718-557-1379</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="resource">
+    <div class="resource-icon green">🏠</div>
+    <div class="resource-body">
+      <div class="resource-name">NYC Homebase Program</div>
+      <div class="resource-desc">Neighborhood-based services to prevent homelessness — rental assistance, case management, benefits help. Run by NYC Department of Homeless Services.</div>
+      <div class="resource-contact">
+        <a class="phone-btn" href="tel:3-1-1">📞 Call 311</a>
+        <a class="phone-btn" href="https://www.nyc.gov/site/dhs/index.page" target="_blank">nyc.gov/dhs</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="resource">
+    <div class="resource-icon blue">🌐</div>
+    <div class="resource-body">
+      <div class="resource-name">NYC Tenant Resource Portal</div>
+      <div class="resource-desc">Answer a few questions online and get directed to the most relevant resources for your specific situation.</div>
+      <div class="resource-contact">
+        <a class="phone-btn" href="https://www.nyc.gov/content/tenantprotection/pages/home" target="_blank">nyc.gov/tenantprotection</a>
+        <a class="phone-btn" href="https://justfix.org" target="_blank">JustFix.nyc</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 4 -->
+  <div class="step-header">
+    <div class="step-num">4</div>
+    <div class="step-title">Gather your documents now</div>
+  </div>
+
+  <p style="font-size:14px;color:var(--sub);margin-bottom:14px">Before you call anyone, collect as much of this as you can. Having it ready speeds everything up.</p>
+
+  <div class="card">
+    <ul class="checklist" id="doclist">
+      <li onclick="toggle(this)"><div class="check-box"></div><span>The eviction notice or court papers you received</span></li>
+      <li onclick="toggle(this)"><div class="check-box"></div><span>Your lease or rental agreement</span></li>
+      <li onclick="toggle(this)"><div class="check-box"></div><span>Recent pay stubs, benefit letters, or proof of income</span></li>
+      <li onclick="toggle(this)"><div class="check-box"></div><span>Any rent payment receipts or bank records showing you paid</span></li>
+      <li onclick="toggle(this)"><div class="check-box"></div><span>Any written communication with your landlord (texts, emails, letters)</span></li>
+      <li onclick="toggle(this)"><div class="check-box"></div><span>Photo ID (any form — immigration status does not matter)</span></li>
+      <li onclick="toggle(this)"><div class="check-box"></div><span>Your Housing Court case number (if you have one)</span></li>
+    </ul>
+  </div>
+
+  <div class="alert alert-amber">
+    <strong>Don't have all of these?</strong> Go anyway. Legal aid organizations are used to helping people who don't have everything. Missing documents won't stop them from helping you.
+  </div>
+
+  <!-- STEP 5 -->
+  <div class="step-header">
+    <div class="step-num">5</div>
+    <div class="step-title">Know your rights</div>
+  </div>
+
+  <div class="faq-item" onclick="toggleFaq(this)">
+    <div class="faq-q">Can my landlord lock me out or turn off my utilities? <span class="arrow">▼</span></div>
+    <div class="faq-a">No. This is illegal in NYC. Your landlord cannot change your locks, remove your belongings, shut off heat, water, or electricity, or harass you to make you leave — even if you owe rent. If this happens, call 311 immediately and contact Legal Aid. This is called an "illegal lockout" and you have the right to return to your apartment.</div>
+  </div>
+
+  <div class="faq-item" onclick="toggleFaq(this)">
+    <div class="faq-q">Do I have to leave when I get the notice? <span class="arrow">▼</span></div>
+    <div class="faq-a">No. A notice is the first step in a legal process — not the end of it. Your landlord must go to Housing Court, and a judge must rule against you before any eviction can happen. Even after a ruling, only a city marshal can carry out the eviction, and you will receive advance notice. This process typically takes months.</div>
+  </div>
+
+  <div class="faq-item" onclick="toggleFaq(this)">
+    <div class="faq-q">What if I don't have immigration papers? <span class="arrow">▼</span></div>
+    <div class="faq-a">Your immigration status does not affect your right to legal help in Housing Court. NYC's Right to Counsel and all legal aid organizations serve tenants regardless of immigration status. You cannot be asked about your status in Housing Court.</div>
+  </div>
+
+  <div class="faq-item" onclick="toggleFaq(this)">
+    <div class="faq-q">What if I miss my court date? <span class="arrow">▼</span></div>
+    <div class="faq-a">This is serious. If you miss your first Housing Court appearance, the judge can issue a default judgment against you — meaning your landlord wins automatically. Call Legal Aid immediately if you missed a date. It may not be too late to file a motion to reopen the case, but you need to act fast.</div>
+  </div>
+
+  <div class="faq-item" onclick="toggleFaq(this)">
+    <div class="faq-q">Is my apartment rent stabilized? <span class="arrow">▼</span></div>
+    <div class="faq-a">If your building has 6 or more units and was built before 1974, you may be rent stabilized. Rent stabilized tenants have stronger protections against eviction and rent increases. To check your status, call DHCR at 718-739-6400 or visit the NYC Rent Guidelines Board at rentguidelinesboard.cityofnewyork.us, or call 212-669-7480.</div>
+  </div>
+
+  <div class="faq-item" onclick="toggleFaq(this)">
+    <div class="faq-q">What is Good Cause Eviction? <span class="arrow">▼</span></div>
+    <div class="faq-a">As of April 2024, NYC's Good Cause Eviction Law gives many tenants in non-rent-stabilized apartments new protections against large rent increases and eviction without good reason. There are exemptions — small landlords, high-rent units, and buildings built after 2009 may not be covered. Ask your lawyer whether this law applies to you.</div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- QUICK REFERENCE -->
+  <div class="step-header" style="margin-top:0">
+    <div class="step-num" style="background:var(--blue)">📞</div>
+    <div class="step-title">Quick reference — all phone numbers</div>
+  </div>
+
+  <div style="display:grid;gap:8px">
+    <div class="resource">
+      <div class="resource-body">
+        <div class="resource-name">311 — NYC General Helpline</div>
+        <div class="resource-desc">Ask for "Tenant Helpline," HRA rental assistance, or Homebase. Available 24/7.</div>
+        <div class="resource-contact"><a class="phone-btn" href="tel:311">📞 311</a></div>
+      </div>
+    </div>
+    <div class="resource">
+      <div class="resource-body">
+        <div class="resource-name">Housing Court Answers</div>
+        <div class="resource-desc">Free help understanding your court papers and next steps. Mon–Fri 9am–5pm.</div>
+        <div class="resource-contact">
+          <a class="phone-btn" href="tel:718-557-1379">718-557-1379</a>
+          <a class="phone-btn" href="tel:212-962-4795">212-962-4795</a>
+        </div>
+      </div>
+    </div>
+    <div class="resource">
+      <div class="resource-body">
+        <div class="resource-name">HRA Office of Civil Justice</div>
+        <div class="resource-desc">Free legal representation for NYC tenants facing eviction.</div>
+        <div class="resource-contact">
+          <a class="phone-btn" href="tel:311">📞 311</a>
+          <a class="phone-btn" href="mailto:civiljustice@hra.nyc.gov">Email HRA</a>
+        </div>
+      </div>
+    </div>
+    <div class="resource">
+      <div class="resource-body">
+        <div class="resource-name">Met Council on Housing</div>
+        <div class="resource-desc">Tenant organizing and information hotline.</div>
+        <div class="resource-contact"><a class="phone-btn" href="tel:212-979-0611">212-979-0611</a></div>
+      </div>
+    </div>
+    <div class="resource">
+      <div class="resource-body">
+        <div class="resource-name">Tenants and Neighbors</div>
+        <div class="resource-desc">Information and tenant advocacy.</div>
+        <div class="resource-contact"><a class="phone-btn" href="tel:212-608-4320">212-608-4320</a></div>
+      </div>
+    </div>
+    <div class="resource">
+      <div class="resource-body">
+        <div class="resource-name">DHCR — Rent regulation complaints</div>
+        <div class="resource-desc">Check if your apartment is rent stabilized. File harassment or overcharge complaints.</div>
+        <div class="resource-contact">
+          <a class="phone-btn" href="tel:718-739-6400">718-739-6400</a>
+          <a class="phone-btn" href="tel:1-866-275-3427">1-866-ASK-DHCR</a>
+        </div>
+      </div>
+    </div>
+    <div class="resource">
+      <div class="resource-body">
+        <div class="resource-name">Coalition for the Homeless</div>
+        <div class="resource-desc">If you are at risk of becoming homeless or need shelter information.</div>
+        <div class="resource-contact"><a class="phone-btn" href="tel:212-776-2000">212-776-2000</a></div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="alert alert-green">
+    <strong>Remember:</strong> You are not alone. Thousands of New Yorkers face eviction notices every year and successfully stay in their homes with the right help. The most important thing you can do right now is make one phone call — to Legal Aid, to 311, or to Housing Court Answers. Do it today.
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  This guide is for informational purposes and does not constitute legal advice.<br>
+  Resources verified July 2026 — phone numbers and programs may change.<br>
+  For the most current information visit <strong>nyc.gov/tenantprotection</strong> or call <strong>311</strong>.<br><br>
+  Built as a community resource guide. Share freely.
+</div>
+
+<script>
+function toggle(li) {
+  li.classList.toggle('done');
+  const box = li.querySelector('.check-box');
+  box.textContent = li.classList.contains('done') ? '✓' : '';
+}
+function toggleFaq(item) {
+  item.classList.toggle('open');
+}
+</script>
+</body>
+</html>
