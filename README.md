@@ -1,4 +1,4 @@
-# NYC Eviction Guide
+# NYC Eviction Notice
 
 A simple, plain-language resource for New Yorkers who have received an eviction notice.
 
