@@ -6,7 +6,7 @@ Housing emergencies are stressful enough without having to decipher legal jargon
 
 It was designed with caseworkers, community organizations, and tenants in mind, so it can be shared quickly when someone needs help most.
 
-**Live Demo:** https://manasvininatarajan.github.io/nyc-eviction-guide/
+**Live Demo:** https://manasvininatarajan.github.io/nyc-eviction-notice/
 
 ---
 
